@@ -20,10 +20,11 @@ The following containers will be run by default:
 ## Usage
 - Copy file `docker-compose.yml` to your Laravel folder.
 - You should change the `project` keyword with your real project name in `docker-compose.yml` file.
-- Create `.docker` folder, add a `.gitkeep` file into it, then add `.docker` folder to `.gitignore`. The project's persistant data (mysql, redis, mongodb data ...) will be stored inside this folder.
-- You can change other database and container names as well.
-- Run `docker-compose up` and enjoy.
+- You have to change the database's variables to fit your `.env` file configuration
 - If you do not need any services (such as `mongodb` or `redis`), simply remove it from `docker-compose.yml`
+- The project's persistant data (mysql, redis, mongodb data ...) will be stored inside this `.docker` folder. It should be added to `.gitignore`.
+- Run `docker-compose up -d` and enjoy.
+- Run `docker exec -it project_workspace bash` to enter workspace container. You can run `php artisan` command inside this container.
 
 ## Links
 Our `docker-compose.yml` is powered by the following images:
